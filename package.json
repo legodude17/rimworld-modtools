@@ -2,6 +2,10 @@
   "name": "rimworld-modtools",
   "description": "Simple tool to help with developing RimWorld mods",
   "version": "0.0.0",
+  "main": "index.js",
+  "bin": {
+    "rimworld-modtools": "cli.js"
+  },
   "homepage": "https://github.com/legodude17/rimworld-modtools",
   "author": "JDB (https://github.com/legodude17)",
   "repository": "legodude17/rimworld-modtools",
@@ -10,5 +14,17 @@
     "eslint": "^7.12.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "enquirer": "^2.3.6",
+    "execa": "^4.0.3",
+    "figures": "^2.0.0",
+    "listr-log": "^0.4.0",
+    "luxon": "^1.25.0",
+    "string-width": "^3.1.0",
+    "term-size": "^2.2.0",
+    "xml2js": "^0.4.23",
+    "yargs": "^16.1.0"
   }
 }
