@@ -1,7 +1,7 @@
 {
   "name": "rimworld-modtools",
   "description": "Simple tool to help with developing RimWorld mods",
-  "version": "0.0.1-0",
+  "version": "0.1.0",
   "main": "index.js",
   "bin": {
     "rimworld-modtools": "cli.js"
