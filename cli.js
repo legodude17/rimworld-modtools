@@ -187,7 +187,6 @@ const arger = yargs(hideBin(process.argv))
         aliases[key].forEach(alias => { defaulted[alias] = true; });
       }
     }
-    console.log(args, defaulted);
     for (const key of Object.keys(args)) {
       if (!defaulted[key]) config[key] = args[key];
     }
@@ -313,8 +312,8 @@ const arger = yargs(hideBin(process.argv))
     for (const key of Object.keys(config)) {
       if (!keysToChange.includes(key)) config[key] = oldConfig[key];
     }
-    console.log(`To be written to ${configFile}:`);
-    console.log(JSON.stringify(config, null, 2));
+    console.error(`To be written to ${configFile}:`);
+    console.error(JSON.stringify(config, null, 2));
     const yes = args.yes || (await enquirer.prompt({
       type: 'confirm',
       message: 'Write?',
