@@ -98,11 +98,23 @@ const arger = yargs(hideBin(process.argv))
       descirbe: 'write without asking first?'
     }
   })
-  .command('run', 'copy files, then run rimworld', yargs => yargs.option('quicktest', {
-    describe: 'pass -quicktest to RimWorld?',
-    default: false,
-    type: 'boolean'
-  }).alias('quicktest', ['q', 'quick', 'test']))
+  .command('run', 'copy files, then run rimworld', yargs => yargs
+    .option('quicktest', {
+      describe: 'pass -quicktest to RimWorld?',
+      default: false,
+      type: 'boolean'
+    })
+    .alias('quicktest', ['q', 'quick', 'test'])
+    .option('logserver', {
+      describe: 'start a server for DevHelper? (only enable if you have DevHelper installed)',
+      type: 'boolean',
+      default: true
+    })
+    .option('port', {
+      describe: 'port of listen to for the log server',
+      type: 'number',
+      default: 8888
+    }))
   .config('config')
   .alias('config', 'c')
   .describe('config', 'path to configuration folder')
@@ -132,19 +144,9 @@ const arger = yargs(hideBin(process.argv))
     describe: 'override the cwd to work in a different one',
     type: 'string'
   })
-  .option('logserver', {
-    describe: 'start a server for DevHelper? (only enable if you have DevHelper installed)',
-    type: 'boolean',
-    default: true
-  })
   .option('rwconfig', {
     describe: 'the folder containing rimworld config',
     type: 'string'
-  })
-  .option('port', {
-    describe: 'port of listen to for the log server',
-    type: 'number',
-    default: 8888
   })
   .alias('help', 'h')
   .alias('version', 'v')
