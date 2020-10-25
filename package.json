@@ -6,6 +6,9 @@
   "bin": {
     "rimworld-modtools": "cli.js"
   },
+  "files": [
+    "README.md"
+  ],
   "homepage": "https://github.com/legodude17/rimworld-modtools",
   "author": "JDB (https://github.com/legodude17)",
   "repository": "legodude17/rimworld-modtools",
